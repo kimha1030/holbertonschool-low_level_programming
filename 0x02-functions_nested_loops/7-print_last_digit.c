@@ -2,22 +2,22 @@
 
 /**
  * print_last_digit - print last digit of a number
- * @n: integer
- * Return: n.
+ * @r: integer
+ * Return: r
  */
-int print_last_digit(int n)
+int print_last_digit(int r)
 {
-	if (n < 0)
+	if (r >= 0)
 	{
-	n = n * -1;
-	n = n % 10;
-	_putchar(n + '0');
-	return (n);
+	r = r % 10;
+	_putchar(r + '0');
+	return (r);
 	}
 	else
 	{
-	n = n % 10;
-	_putchar(n + '0');
-	return (n);
+	r = r * -1;
+	r = r % 10;
+	_putchar(r + '0');
+	return (r);
 	}
 }
