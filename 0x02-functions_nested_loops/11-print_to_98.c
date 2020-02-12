@@ -8,31 +8,30 @@
 void print_to_98(int n)
 {
 	int i; 
-	char max;
 
-	if (n <= '0')
+	if (n <= 0)
 	{
-		for (i = n ; i <= '98' ; i++)
+		for (i = n ; i <= 98 ; i++)
 		{
-			_putchar(i);
-			_putchar(',');
-			_putchar(' ');
-			_putchar('\n');
+			printf("%i", n);
+			printf(",");
+			printf(" ");
+			printf("\n");
 		}
 	}
-	else if (n == max)
+	else if (n == 98)
 	{
-		_putchar(i);
-		_putchar('\n');
+		printf("%i", i);
+		printf("\n");
 	}
 	else
 	{
-		for (i = n ; i >= '98' ; i--)
+		for (i = n ; i >= 98 ; i--)
 		{
-			_putchar(i);
-			_putchar(',');
-			_putchar(' ');
-			_putchar('\n');
+			printf("%i", i);
+                        printf(",");
+                        printf(" ");
+                        printf("\n");
 		}
 	}
 }
