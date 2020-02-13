@@ -9,13 +9,13 @@ int main(void)
 	unsigned long i, a = 0, b = 3, c = 3;
 
 	printf("1, 2, ");
-	for (i = 1 ; i <= 100 ; i++)
+	for (i = 1 ; i <= 98 ; i++)
 	{
 		c = a + b;
 		a = b;
 		b = c;
 
-		if (i == 100)
+		if (i == 98)
 		{
 			printf("%lu\n", c);
 		}
