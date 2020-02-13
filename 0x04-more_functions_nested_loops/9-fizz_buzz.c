@@ -1,9 +1,8 @@
 #include <stdio.h>
-
 /**
- * main - print fizz or buzz
+ * main - Entry point
  *
- * Return: Always 0.
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
