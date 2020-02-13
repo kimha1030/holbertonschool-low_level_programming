@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - check the code for Holberton School students.
  *
- * Return: Always 0 (Success)
+ * Return: Always 0.
  */
 int main(void)
 {
@@ -12,24 +12,24 @@ int main(void)
 	i = 1;
 	while (i <= 100)
 	{
-		if (i % 3 == 0)
+		if (i % 3 == 0 && i % 5 == 0)
 		{
-			printf("Fizz ");
+			printf("FizzBuzz ");
 		}
 		else if (i % 5 == 0)
 		{
 			printf("Buzz ");
 		}
-		else if (i % 3 == 0 && i % 5 == 0)
+		else if (i % 3 == 0)
 		{
-			printf("FizzBuzz ");
+			printf("Fizz ");
 		}
 		else
 		{
-			printf("%i ", i);
+			printf("%d ", i);
 		}
 		i++;
 	}
 	printf("\n");
+	return (0);
 }
-
