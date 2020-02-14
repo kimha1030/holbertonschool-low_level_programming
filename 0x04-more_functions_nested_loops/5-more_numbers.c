@@ -1,25 +1,27 @@
 #include "holberton.h"
 
 /**
- * print_most_numbers - this function print numbers from 0 to 9, without 2 and 4..
- * @c: char.
- * Return: Always 0.
+ * more_numbers - print numbers from 0 to 14.
+ * Return: void
  */
-void print_most_numbers(void)
+void more_numbers(void)
 {
-	int i, j;
+	int x = 0;
+	int y = 0;
 
-	i = 1;
-	while (i <= 10)
+	while (x < 10)
 	{
-		i++;
-
-		j = 0;
-		while (j <=14)
+		while (y <= 14)
 		{
-			j++;
-			_putchar('0' + j);:
+			if (y >= 10)
+			{
+				_putchar(y / 10 + '0');
+			}
+			_putchar(y % 10 + '0');
+		++y;
 		}
-	_putchar('\n');
+		_putchar('\n');
+		y = 0;
+		x++;
 	}
 }
