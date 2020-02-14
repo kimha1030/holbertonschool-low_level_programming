@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * print_diagonal - print diagonal lines based in n
- * @n: define the number of diagonal lines
+ * print_diagonal - print a lines
+ * @n: line diagonal
  * Return: void
  */
 void print_diagonal(int n)
