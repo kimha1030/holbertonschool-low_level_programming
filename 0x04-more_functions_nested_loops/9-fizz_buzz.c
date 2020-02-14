@@ -24,13 +24,13 @@ int main(void)
 		}
 		else
 		{
-			if (i != 1)
+			if (i == 1)
 			{
-				printf(" %i", i);
+				printf("%i", i);
 			}
 			else
-			{	
-				printf("%i", i);
+			{
+				printf(" %i", i);
 			}
 		}
 	}
