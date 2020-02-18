@@ -1,11 +1,11 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
- * _strlen - Function that shows the lenght of word.
- * @s: character.
- * return: value of @cont
+ * _strlen - print lenght string.
+ * @s: string..
+ * Return: cont
 **/
-
 int _strlen(char *s)
 {
 	char aux;
