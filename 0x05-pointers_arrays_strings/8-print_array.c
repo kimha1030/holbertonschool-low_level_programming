@@ -1,7 +1,8 @@
 #include <stdio.h>
 /**
- * _puts - Prints a string to stdout.
- * @str: character.
+ * print_array - Prints array as string.
+ * @a: pointer.
+ * @n: integer
  * Return: Always 0.
 **/
 void print_array(int *a, int n)
