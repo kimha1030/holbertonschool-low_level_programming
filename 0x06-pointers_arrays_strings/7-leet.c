@@ -1,19 +1,26 @@
 #include "holberton.h"
-/**
- * *string_toupper - Change the string to uppercase.
- * @p: pointer
- * Return: p
-**/
-char *string_toupper(char *p)
-{
-	char letterLow[] = {a, e, o, t, l]
-	char letterUp[] = {A, E, O, T, L}
-	char num[] = {'4', '3', '0', '7', '1'}
-	int i;
 
-	for (i = 0 ; p[i] != '\0' ; i++)
+/**
+ * *leet - function that encodes a string into 1337.
+ * @s: pointer
+ * Return: s
+ */
+char *leet(char *s)
+{
+	int x, y;
+	int replace[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
+	int encoded[] = {'4', '3', '0', '7', '1'};
+
+	for (x = 0; s[x] != '\0'; x++)
 	{
-	
+		for (y = 0; y < 10; y++)
+		{
+			if (s[x] == replace[y])
+			{
+				s[x] = encoded[y / 2];
+				y = 9;
+			}
+		}
 	}
-	return (p);
+	return (s);
 }
