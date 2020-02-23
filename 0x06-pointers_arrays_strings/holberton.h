@@ -9,7 +9,8 @@
 	char *string_toupper(char *p);
 	char *cap_string(char *u);
 	char *leet(char *s);
-	char *rot13(char *);
+	char *rot13(char *s);
+	void print_number(int n);
 	int _putchar(char c);
 
 #endif
