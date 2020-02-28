@@ -1,45 +1,47 @@
 #include "holberton.h"
 /**
- * prime - define number
- * @n: integer.
- * @i: integer.
- * Return: int.
-**/
-
-int prime(int n, int i)
+ * nprime - function that evaluate if a number is a
+ * prime number
+ * @n: number integer
+ * @x: number integer
+ * Return: int
+ */
+int nprime(int n, int x)
 {
-	if (i == 1)
+	if (x == 2)
 	{
 		return (1);
 	}
-	else if (n % i == 0)
+	if (x <= 1)
+	{
+		return (0);
+	}
+	if (n % x == 0)
 	{
 		return (0);
 	}
 	else
 	{
-		return (prime(n, (i - 1)));
+		return (nprime(n, x - 1));
 	}
 }
 
 /**
- * is_prime_number - function prints 1 if the number is prime.
- * @n: integer.
- * Return: int.
-**/
-
+ * is_prime_number - evaluate if a number is a prime number
+ * @n: number integer
+ * Return: int
+ */
 int is_prime_number(int n)
 {
-	int result;
+	int x;
 
-	result = prime(n, n / 2);
-	if (result == 1)
+	if (n <= 0)
 	{
-		return (1);
+		return (0);
 	}
 	else
 	{
-		return (-1);
+		x = nprime(n, n - 1);
+		return (x);
 	}
-	return (0);
 }
