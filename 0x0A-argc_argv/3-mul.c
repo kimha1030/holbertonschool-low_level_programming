@@ -13,17 +13,17 @@ int main(int argc, char *argv[])
 	int mult = 0;
 	int A, B;
 
-	if (argc < 2)
+	if (argc == 3)
 	{
-		printf("Error\n");
-		return (1);
+		A = atoi(argv[1]);
+		B = atoi(argv[2]);
+		mult = A * B;
+		printf("%d\n", mult);
 	}
 	else
 	{
-		A = atoi(*(argv + 1));
-		B = atoi(*(argv + 2));
-		mult = A * B;
-		printf("%d\n", mult);
+		printf("Error\n");
+		return (1);
 	}
 	return (0);
 }
