@@ -12,11 +12,11 @@
 int main(int argc, char *argv[])
 {
 	int sum = 0;
-	int i = 1;
+	int i;
 
 	if (argc >= 2)
 	{
-		for ( ; argv[i] != 0 ; i++)
+		for (i = 1 ; argv[i] != 0 ; i++)
 		{
 			if (!isdigit(*(argv[i])))
 			{
