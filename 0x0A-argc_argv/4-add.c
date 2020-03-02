@@ -1,24 +1,6 @@
-#include <stdlib.h>
 #include <stdio.h>
-
-/**
- * _isdigit - function that search only digit.
- * @x: integer.
- * Return: digit
- **/
-
-int _isdigit(char *x)
-{
-	while (*x != '\0')
-	{
-		if (*x < 0 || *x > 9)
-		{
-			return (1);
-		}
-		x++;
-	}
-	return (0);
-}
+#include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - function that adds positive numbers.
@@ -29,27 +11,65 @@ int _isdigit(char *x)
 
 int main(int argc, char *argv[])
 {
-	int x, sum = 0;
+	int sum = 0;
+	int i;
 
-	if (argc < 2)
+	if (argc >= 2)
 	{
-		printf("0\n");
-	}
-	else
-	{
-		for (x = 1; x < argc ; x++)
+		for (i = 1 ; argv[i] != 0 ; i++)
 		{
-			if (!_isdigit(argv[x]))
+			if (!isdigit(*(argv[i])))
 			{
 				printf("Error\n");
 				return (1);
 			}
 			else
 			{
-				sum = sum + atoi(argv[x]);
+				sum = sum + atoi(argv[i]);
 			}
 		}
+		printf("%d\n", sum);
 	}
-	printf("%d\n", sum);
+	else
+	{
+		printf("0\n");
+	}
+	return (0);
+}#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+/**
+ * main - function that adds positive numbers.
+ * @argc: number strings in argv
+ * @argv: array of command-line argument
+ * Return: Always 0.
+ */
+
+int main(int argc, char *argv[])
+{
+	int sum = 0;
+	int i;
+
+	if (argc >= 2)
+	{
+		for (i = 1 ; argv[i] != 0 ; i++)
+		{
+			if (!isdigit(*(argv[i])))
+			{
+				printf("Error\n");
+				return (1);
+			}
+			else
+			{
+				sum = sum + atoi(argv[i]);
+			}
+		}
+		printf("%d\n", sum);
+	}
+	else
+	{
+		printf("0\n");
+	}
 	return (0);
 }
