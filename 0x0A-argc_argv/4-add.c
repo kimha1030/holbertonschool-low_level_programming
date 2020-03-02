@@ -1,6 +1,24 @@
-#include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
+#include <stdio.h>
+
+/**
+ * _isdigit - function that search only digit.
+ * @x: integer.
+ * Return: digit
+ **/
+
+int _isdigit(char *x)
+{
+	while (*x != '\0')
+	{
+		if (*x < 0 || *x > 9)
+		{
+			return (1);
+		}
+		x++;
+	}
+	return (0);
+}
 
 /**
  * main - function that adds positive numbers.
@@ -11,31 +29,27 @@
 
 int main(int argc, char *argv[])
 {
-	int sum = 0;
-	int i;
+	int x, sum = 0;
 
-	if (argc >= 2)
+	if (argc < 2)
 	{
-		for (i = 1 ; argv[i] != '\0' ; i++)
+		printf("0\n");
+	}
+	else
+	{
+		for (x = 1; x < argc ; x++)
 		{
-			if (!isdigit(*(argv[i])))
+			if (!_isdigit(argv[x]))
 			{
 				printf("Error\n");
 				return (1);
 			}
 			else
 			{
-				if (atoi(argv[i]) > 0)
-				{
-				sum = sum + atoi(argv[i]);
-				}
+				sum = sum + atoi(argv[x]);
 			}
 		}
-		printf("%d\n", sum);
 	}
-	else
-	{
-		printf("0\n");
-	}
+	printf("%d\n", sum);
 	return (0);
 }
