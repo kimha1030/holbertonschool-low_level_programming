@@ -17,7 +17,6 @@ int _isdigit(char *x)
 		x++;
 	}
 	return (1);
-
 }
 
 /**
@@ -38,7 +37,9 @@ int main(int argc, char *argv[])
 	for (x = 1; x < argc ; x++)
 	{
 		if (_isdigit(argv[x]))
+		{
 			sum += atoi(argv[x]);
+		}
 		else
 		{
 			printf("Error\n");
