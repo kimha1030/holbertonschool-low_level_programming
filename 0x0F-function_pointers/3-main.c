@@ -33,6 +33,6 @@ int main(int argc, char *argv[])
 		exit(100);
 	}
 	ca = get_op_function(opr);
-	result = ca(n1, n2);
+	result = ca(a, b);
 	printf("%d\n", result);
 }
