@@ -12,8 +12,9 @@
 int main(int argc, char *argv[])
 {	int a, b, result;
 	int *op;
+	char *opr;
 
-	int *ca(int, int);
+	int (*ca)(int, int);
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 	opr = argv[2];
@@ -27,7 +28,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	if ((argv[2] == '/' || argv[2] == '%') && b == 0)
+	if ((opr == '/' || opr == '%') && b == 0)
 	{
 		printf("Error\n");
 		exit(100);
