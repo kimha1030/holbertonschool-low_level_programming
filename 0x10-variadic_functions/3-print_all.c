@@ -10,18 +10,15 @@ void print_all(const char * const format, ...)
 {
 	va_list list;
 	char *s;
-	int j = 0;
-	int k = 1;
-	char c;
+	int j = 0, k = 1;
 
 	va_start(list, format);
-	while (format[j])
+	while (format && format[j])
 	{
-		switch(format[j])
+		switch (format[j])
 		{
 			case 'c':
-				c = va_arg(list, int);
-				printf("%c", c);
+				printf("%c", va_arg(list, int));
 				break;
 			case 'i':
 				printf("%d", va_arg(list, int));
@@ -32,21 +29,18 @@ void print_all(const char * const format, ...)
 			case 's':
 				s = va_arg(list, char *);
 				if (s == NULL)
-				{
 					printf("(nil)");
-				}
-				else
-				{
-					printf("%s", s);
-				}
+					break;
+				printf("%s", s);
 				break;
 			default:
 				k = 0;
-				break;
 		}
-	j++;
+		if (format[j + 1] != 0 && k)
+			printf(", ");
+		j++;
+		k++;
 	}
-	if (format[j + 1] != 0 && k)
-		printf(", ");
-	va_end(list);                                                                      printf("\n"); 
+	va_end(list);
+	printf("\n");
 }
