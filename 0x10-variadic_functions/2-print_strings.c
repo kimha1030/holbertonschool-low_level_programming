@@ -20,7 +20,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			p = va_arg(list, char *);
 			if (p == NULL)
 				printf("(nil)");
-			printf("%s", p);
+			else
+				printf("%s", p);
 			if (i < (n - 1))
 				printf("%s", separator);
 		}
@@ -29,7 +30,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			p = va_arg(list, char *);
 			if (p == NULL)
 				printf("(nil)");
-			printf("%s", p);
+			else
+				printf("%s", p);
 		}
 	}
 		va_end(list);
