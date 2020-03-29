@@ -51,7 +51,7 @@ int _isdigit(const char *c)
 }
 
 /**
- * binary_yo_uint - converts a binary number to an unsigned int.
+ * binary_to_uint - converts a binary number to an unsigned int.
  * @b: pointer
  * Return: unsigned int
  */
@@ -59,15 +59,18 @@ unsigned int binary_to_uint(const char *b)
 {
 	unsigned int i, last = 0, sum = 0;
 	int value, exp = 1, ult;
+
 	if (b == NULL)
 		return (0);
 	ult = _isdigit(b);
 	if (ult == 0)
+	{
 		return (0);
+	}
 	else
 	{
 		value = _atoi(b);
-		for(i = 0; value != 0 ; i++)
+		for (i = 0; value != 0 ; i++)
 		{
 			if (i == 0)
 				exp = exp * 1;
