@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * main - program that copies the content of a file in another
  * @argc: count
@@ -35,12 +36,12 @@ int main(int argc, char *argv[])
  * copyfile - program that copies the content of a file in another
  * @fsource: source
  * @fdest: destination
- * @argv1: pointer
- * @argv2: pointer
+ * @argvs: pointer
+ * @argvd: pointer
  * Return: int
  */
 
-int copyfile(int fsource, int fdest, char *argv1, char *argv2)
+int copyfile(int fsource, int fdest, char *argvs, char *argvd)
 {
 	int func_r, func_w, close_so, close_de;
 	char buffer[1024];
@@ -49,13 +50,13 @@ int copyfile(int fsource, int fdest, char *argv1, char *argv2)
 		func_r = read(fsource, buffer, 1024);
 		if (func_r == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv1);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argvs);
 			exit(98);
 		}
 		func_w = write(fdest, buffer, func_r);
-		if (func_w == -1 || func_w != func_r)
+		if (func_w != func_r || func_w == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv2);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argvd);
 			exit(99);
 		}
 	} while (func_r == 1024);
