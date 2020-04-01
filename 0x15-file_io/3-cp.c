@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fdest = open(argv[2],  O_CREAT | O_WRONLY | O_TRUNC | 0664);
+	fdest = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fdest == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
@@ -54,19 +54,19 @@ int copyfile(int fsource, int fdest, char *argvs, char *argvd)
 			exit(98);
 		}
 		func_w = write(fdest, buffer, func_r);
-		if (func_w != func_r || func_w == -1)
+		if ((func_r != func_w) || (func_w == -1))
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argvd);
 			exit(99);
 		}
 	} while (func_r == 1024);
 	close_so = close(fsource);
+	close_de = close(fdest);
 	if (close_so == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fsource);
 		exit(100);
 	}
-	close_de = close(fdest);
 	if (close_de == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdest);
