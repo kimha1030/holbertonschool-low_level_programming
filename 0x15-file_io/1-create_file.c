@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * create_textfile - creates a file.
+ * create_file - creates a file.
  * @filename: pointer
  * @text_content: second argument
  * Return: 1 (sucess) or -1 (fail).
