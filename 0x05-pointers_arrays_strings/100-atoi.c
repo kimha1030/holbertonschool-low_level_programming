@@ -1,36 +1,31 @@
 #include "holberton.h"
 /**
-* _atoi - print converT
-* @s: pointr character
-* Return: num
-**/
+ * _atoi - convertir string to integer
+ * @s: pointer
+ * Return: number
+ **/
 
 int _atoi(char *s)
 {
-	int i, signo, num, bo;
-	i = 0;
-	signo = -1;
-	num = 0;
-	bo = 0;
+	int i = 0, sign = -1, number = 0, aux = 0;
 
-	while (s[i] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == '-')
 		{
-			signo *= -1;
+			sign *= -1;
 		}
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			num *= 10;
-			num -= (s[i] - '0');
-			bo = 1;
+			number *= 10;
+			number -= (s[i] - '0');
+			aux = 1;
 		}
-		else if (bo == 1)
+		else if (aux == 1)
 		{
 			break;
 		}
-		i++;
 	}
-	num *= signo;
+	number = number * sign;
 	return (num);
 }
