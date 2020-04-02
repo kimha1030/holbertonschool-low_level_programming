@@ -1,9 +1,11 @@
 #include <stdio.h>
+
 /**
  * main - Entry point
  *
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
 	int a, b, c, d;
@@ -18,16 +20,16 @@ int main(void)
 				{
 					if (b < d && a <= c)
 					{
-					putchar(a);
-					putchar(b);
-					putchar(' ');
-					putchar(c);
-					putchar(d);
-					if (!(a == '9' && b == '8'))
-					{
-					putchar(',');
-					putchar(' ');
-					}
+						putchar(a);
+						putchar(b);
+						putchar(' ');
+						putchar(c);
+						putchar(d);
+						if (!(a == '9' && b == '8'))
+						{
+							putchar(',');
+							putchar(' ');
+						}
 					}
 				}
 			}
