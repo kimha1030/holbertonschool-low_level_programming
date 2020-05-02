@@ -5,7 +5,7 @@
  * @head: pointer
  * Return: void
  */
-void free_dlistint(dlistint_t *head)
+void free_dlistint_t(dlistint_t *head)
 {
 	dlistint_t *aux;
 	dlistint_t *p;
