@@ -8,8 +8,8 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int i, ix;
-	hash_node_t *aux;
+	unsigned long int ix;
+	hash_node_t *aux, *tmp;
 	char *copy;
 
 	if (ht == NULL)
@@ -20,13 +20,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (copy == NULL)
 		return (0);
 	ix = key_index((const unsigned char *)key, ht->size);
-	for (i = ix; ht->array[i]; i++)
+	tmp = ht->array[ix];
+	while (tmp)
 	{
-		if (strcmp(ht->array[i]->key, key) == 0)
+		if (strcmp(tmp->key, key) == 0)
 		{
-			ht->array[i]->value = copy;
+			tmp->value = copy;
 			return (1);
 		}
+		tmp = tmp->next;
 	}
 	aux = (hash_node_t *) malloc(sizeof(hash_node_t));
 	if (aux == NULL)
