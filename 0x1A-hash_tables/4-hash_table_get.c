@@ -6,17 +6,18 @@
  * @key: key
  * Return: value or NULL
  */
+
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int index, i;
+	unsigned long int ix, i;
 	char *copy = NULL;
 
 	if (ht == NULL)
 		return (NULL);
 	if (key == NULL)
 		return (NULL);
-	index = key_index((const unsigned char *)key, ht->size);
-	for (i = index; ht->array[i]; i++)
+	ix = key_index((const unsigned char *)key, ht->size);
+	for (i = ix; ht->array[i]; i++)
 	{
 		if (strcmp(ht->array[i]->key, key) == 0)
 		{
