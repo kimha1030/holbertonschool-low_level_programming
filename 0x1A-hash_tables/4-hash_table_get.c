@@ -21,8 +21,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	{
 		if (strcmp(ht->array[i]->key, key) == 0)
 		{
-			copy = strdup(ht->array[i]->value);
-			return (copy);
+			copy = ht->array[i]->value;
 		}
 		else
 		{
