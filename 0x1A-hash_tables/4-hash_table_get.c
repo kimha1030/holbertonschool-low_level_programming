@@ -9,24 +9,22 @@
 
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int ix, i;
-	char *copy = NULL;
+	unsigned long int ix;
+	hash_node_t *aux = NULL;
 
 	if (ht == NULL)
 		return (NULL);
 	if (key == NULL)
 		return (NULL);
 	ix = key_index((const unsigned char *)key, ht->size);
-	for (i = ix; ht->array[i]; i++)
+	aux = ht->array[ix];
+	while (aux)
 	{
-		if (strcmp(ht->array[i]->key, key) == 0)
+		if (strcmp(aux->key, key) == 0)
 		{
-			copy = ht->array[i]->value;
+			return (aux->value);
 		}
-		else
-		{
-			return (NULL);
-		}
+		aux = aux->next;
 	}
-	return (copy);
+	return (NULL);
 }
