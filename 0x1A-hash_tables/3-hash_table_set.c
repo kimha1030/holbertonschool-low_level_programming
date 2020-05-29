@@ -25,6 +25,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(tmp->key, key) == 0)
 		{
+			if (tmp->value != NULL)
+				free(tmp->value);
 			tmp->value = copy;
 			return (1);
 		}
