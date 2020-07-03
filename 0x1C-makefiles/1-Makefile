@@ -1,0 +1,8 @@
+# Task 1 - Do a makefile with variables
+# CC is the compiler to be used
+CC = gcc
+# The .c files
+SRC = holberton.c main.c
+# all is the rule for all .c files
+all: $(SRC)
+	$(CC) $(SRC) -o holberton

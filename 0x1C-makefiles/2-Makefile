@@ -1,0 +1,8 @@
+# Task 2 - Do a useful MakeFile
+CC = gcc
+SRC = main.c holberton.c
+NAME = holberton
+OBJ = $(SRC:.c=.o)
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+all: $(NAME)
