@@ -1,4 +1,16 @@
 # Task 4 - Useful MakeFile with rules and flags
+# CC: Compiler to be used
+# SRC: .c files
+# OBJ: .o files
+# NAME: Name of executable
+# RM: Command for delete files
+# CFLAGS: Compiler flags: -Wall -Werror -Wextra -pedantic
+# Rules:
+# all: Rule for build the executable
+# clean: Deletes all Emacs and Vim temporary files along with the executable
+# oclean: Deletes the object files
+# fclean: Deletes Emacs temporary files, the executable, and the object files
+# re: Forces recompilation of all source files
 CC = gcc
 SRC = main.c holberton.c
 NAME = holberton
