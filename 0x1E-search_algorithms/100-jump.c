@@ -1,9 +1,10 @@
 #include "search_algos.h"
 #include <math.h>
 /**
- * jumpr_search - Function that searches for a value in array
+ * jump_search - Function that searches for a value in array
  * array: array of integers
  * size: size of array
+ * value: value at be searched
  * Return: index of value searched or -1 if it doesn't exist
  */
 int jump_search(int *array, size_t size, int value)
