@@ -2,9 +2,9 @@
 #include <math.h>
 /**
  * jump_search - Function that searches for a value in array
- * array: array of integers
- * size: size of array
- * value: value at be searched
+ * @array: array of integers
+ * @size: size of array
+ * @value: value at be searched
  * Return: index of value searched or -1 if it doesn't exist
  */
 int jump_search(int *array, size_t size, int value)
@@ -27,11 +27,11 @@ int jump_search(int *array, size_t size, int value)
 	{
 		printf("Value checked array[%ld] = [%d]\n", min, array[min]);
 		min++;
-		if (array[min] == value)
-		{
-			printf("Value checked array[%ld] = [%d]\n", min, array[min]);
-			return (min);
-		}
 	}
-	return -1;
+	if (array[min] == value)
+	{
+		printf("Value checked array[%ld] = [%d]\n", min, array[min]);
+		return (min);
+	}
+	return (-1);
 }
